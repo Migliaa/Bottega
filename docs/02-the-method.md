@@ -51,8 +51,9 @@ Before telling the committente to launch a session, the manager confirms all fou
 2. **Blocking decisions resolved?** Every choice the session would otherwise stop to ask is decided and written down — including an explicit *what is NOT a blocker*.
 3. **Session type matches task type?** Build/code → an execution session scoped to the owner's folder; recurring domain work → that department's session.
 4. **Committente prerequisites listed?** Any secret/account/setup the committente must provide, each with *what it blocks* (and what it doesn't).
+5. **Launch command ready?** Hand the committente the literal `/lancia-… <args>` line, copy-pasteable, target already filled — never a prose pointer.
 
-The incident this prevents: launching a *department* session to *build code*, with the work-order sitting in a file that session never reads — it dutifully stops and asks, producing nothing.
+Two incidents this prevents: (a) launching a *department* session to *build code*, with the work-order in a file that session never reads — it stops and asks, producing nothing; (b) a prose pointer + a *bare* command (no argument) when several work-orders are open — the session correctly asks "which one?" instead of guessing.
 
 ## Gates: nothing skips a link
 
