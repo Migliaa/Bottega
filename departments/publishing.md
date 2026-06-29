@@ -22,3 +22,6 @@ At start: do open `## From Manager` items ("you may publish item X's tier"). At 
 
 ## Model
 A cheaper/faster model is usually fine (mostly mechanical distribution); escalate judgment calls to the manager.
+
+## Building publishing's own tooling
+This session is **domain-mode** (recurring, human-in-the-loop publishing) — it does **not** build code. To build publishing's automation/pipeline, the manager launches an **execution session scoped to `content/publishing/`** (territory rule): the operative implements it, publishing stays the owner (kept in the loop via its `INTERFACE.md`). Don't launch this session to write its own code.

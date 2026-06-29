@@ -43,6 +43,17 @@ A **work-order** is a self-contained block in `Sprint.md` that an execution sess
 
 The launch message to an execution session is then just a **pointer** (`/lancia-operativa <work-order name>`) — the session reads the rest from disk. Rules are *not* re-stated at every launch; they live in `CLAUDE.md` and the auto-loaded files.
 
+### Before you launch a session (manager pre-flight)
+
+Before telling the committente to launch a session, the manager confirms all four — any "no" means fix it first, don't launch:
+
+1. **Work-order in the read-path?** A self-contained `[ ]` work-order sits where that session reads it (`Sprint.md` for execution; `INTERFACE.md → From Manager` for a department).
+2. **Blocking decisions resolved?** Every choice the session would otherwise stop to ask is decided and written down — including an explicit *what is NOT a blocker*.
+3. **Session type matches task type?** Build/code → an execution session scoped to the owner's folder; recurring domain work → that department's session.
+4. **Committente prerequisites listed?** Any secret/account/setup the committente must provide, each with *what it blocks* (and what it doesn't).
+
+The incident this prevents: launching a *department* session to *build code*, with the work-order sitting in a file that session never reads — it dutifully stops and asks, producing nothing.
+
 ## Gates: nothing skips a link
 
 A **gate** is a checkpoint that must be green before the project advances past it. The manager **enforces** the chain; no one jumps a link. Typical gates:

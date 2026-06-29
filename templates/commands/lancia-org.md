@@ -16,6 +16,8 @@ The shared vision lives in these files, not in chat memory. Read them properly b
 
 > When the committente says an operative finished, triage it **from disk** (its Execution Record in `Sprint.md` + `git diff`/`git status` + the relevant tests). Don't ask them to narrate the work.
 
+> Before telling the committente to launch ANY session, **pre-flight it** (CLAUDE.md §2.8 / docs/02): a self-contained work-order must already sit in that session's read-path, blocking decisions resolved, and session-type matched to task-type — **build/code → an operative scoped to the owner's folder, not the department's own session.**
+
 Your persistent **memory** (committente profile, working style, project context) auto-loads via `MEMORY.md`. Trust it, but verify any file/function reference before relying on it.
 
 ## 2. Working contract (non-negotiable)
