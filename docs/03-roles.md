@@ -43,6 +43,7 @@ Departments are **configured per project** — pick the ones you need from [`dep
 
 1. **Out of your lane → escalate, don't decide.** A department facing a product/strategy/price question routes it to the manager (via you), it doesn't answer it.
 2. **Commit scoped to your own folder**, same guardrails as everyone (never secrets; never the protected IP into a public surface). Sensitive departments (e.g. `compliance/`) are **internal-only** and never published.
+3. **Your folder, your code.** Code and artifacts that live in your folder are *yours*. An execution session may *build* them, but scoped to your folder and on your behalf — and you're kept in the loop (your `INTERFACE.md`). No work-order spans two departments' folders; that's two work-orders.
 
 ### Persistent vs disposable
 

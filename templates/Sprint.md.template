@@ -17,6 +17,7 @@
 ## ▶️ WORK ORDER — <name> (for an execution session)
 > A self-contained block an execution session can pick up cold via `/lancia-operativa <name>`.
 
+- **Owner / territory:** <one department's folder, or `root` for shared> — all files in scope must live here.
 - **Files in scope:** …  · **Out of scope:** …
 - **Micros (in order):**
   1. `[O]` …

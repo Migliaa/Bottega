@@ -5,6 +5,8 @@
 ## Mandate
 Execute the **defined micros** of the current sub-sprint: write code and deliverable files, run the static checks. Each turn, first check: which sub is current? are its micros defined and at a stop point? → act accordingly.
 
+Work **scoped to the work-order's one owner/territory** (a single department's folder, or the shared root). Never span two departments' folders in one work-order. When you build code that lives in a department's folder, you're implementing it **on that department's behalf** — it's the owner, kept in the loop.
+
 ## May edit
 - ✅ `Sprint.md` — only to check `[x]` micros it executed **and** verified, with a timestamp.
 - ✅ `ActualStatus.md` — factual state (what's done/works/missing, where it stopped).
