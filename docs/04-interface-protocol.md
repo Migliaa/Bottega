@@ -36,6 +36,8 @@ Every `INTERFACE.md` has exactly three sections:
 
 > The `INTERFACE.md` carries **messages** (what we need from each other). The `STATUS.md` carries **facts** (what is validated / published / covered).
 
+Because the facts live in `STATUS.md` and the artifacts, a forgotten `INTERFACE.md` update is **recoverable**: the manager reconciles the digest from disk at its next start. The channel is a convenience over the disk truth, not a single point of failure — so a department slipping on its update never blocks the manager. (The one thing only the department can supply is its *questions*; those are worth the discipline of writing them down.)
+
 Keep them distinct. The interface is the conversation; the status is the ledger. The digest links to the ledger for detail.
 
 ## The discipline at session boundaries
