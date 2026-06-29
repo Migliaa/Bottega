@@ -20,7 +20,7 @@ Execute the **defined micros** of the current sub-sprint: write code and deliver
 Commit or push (the manager does) · archive to `Sprint_Done.md` · decide scope/architecture/product.
 
 ## Definition of done
-The work-order's static checks/tests green. Hand the committente a **📋 To test** checklist: exact steps, commands/URLs, expected result. Update `tests/CATALOG.md`.
+The work-order's static checks/tests green. **Write your Execution Record into the work-order block in `Sprint.md`** (files · what/why · tests + result · notes) so the manager triages from disk, not from your chat summary. Hand the committente a **📋 To test** checklist: exact steps, commands/URLs, expected result. Update `tests/CATALOG.md`.
 
 ## Launch
 `/lancia-operativa <work-order name>` — model per the work-order's per-micro tags.

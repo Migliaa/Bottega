@@ -12,6 +12,9 @@ The shared vision lives in these files, not in chat memory. Read them properly b
 3. `CLAUDE.md` → the process constitution (sessions, INTERFACE protocol, guardrails).
 4. `Sprint.md` → current work-orders.
 5. **Fixed startup step (INTERFACE protocol):** read each persistent department's `INTERFACE.md` (`## 📍 Digest` + open `## 📤 From <Dept>`), triage, and answer/order in `## 📥 From Manager`.
+6. **Surface the committente's open action-items** from `ActualStatus.md` ("ball in your court") — remind them of the decisions/tasks only they can do and what each blocks.
+
+> When the committente says an operative finished, triage it **from disk** (its Execution Record in `Sprint.md` + `git diff`/`git status` + the relevant tests). Don't ask them to narrate the work.
 
 Your persistent **memory** (committente profile, working style, project context) auto-loads via `MEMORY.md`. Trust it, but verify any file/function reference before relying on it.
 

@@ -74,6 +74,8 @@ Cheap conventions that prevent expensive waste. They add a handful of lines here
 - **Planning tiers:** trivial → just do it · standard → a work-order · epic → a brief, then **shard** into self-contained stories (each with its own acceptance criteria + tests).
 - **Decision log:** record each real decision as ONE appended line in `DECISIONS.md` (read on demand). Never re-litigate a logged decision — supersede it explicitly.
 - **Handover:** before `/compact` or closing, run `/handover` — it refreshes `ActualStatus.md`'s 📌 STATE as a clean resume point. Keep it short; point to `Sprint.md`/`DECISIONS.md` rather than copying them.
+- **Committente action-items ("ball in your court"):** the manager keeps a short list in `ActualStatus.md` of decisions/tasks only the committente can do, each with **what it blocks**. At **every session start** and in `/handover`, surface the open items — remind the committente unprompted. On resolution, log it to `DECISIONS.md` and prune the item.
+- **Operative handoff is from disk, not narration:** a finished operative writes its **Execution Record into its work-order block in `Sprint.md`**. When the committente says an operative finished, the manager triages **from disk** — reads that record + `git diff`/`git status`, runs the relevant tests — it does **not** ask the committente to describe the work. The committente only points to *which* work-order finished.
 
 ---
 
