@@ -2,6 +2,9 @@
 
 Bottega is hardened by **dogfooding**: it runs a real project, and most rules below trace to a concrete incident in real use. That's the maintenance philosophy — the framework earns each rule rather than guessing it up front.
 
+## Current focus (maintainer)
+Framework **complete and stable**, maintained **incident-driven** (entries below). Nothing in flight on the framework itself. The meta-manager session should open **rooted in this folder** (`Bottega`) so `/handover` and native git work; downstream projects are advised separately, their state in their own repos.
+
 ## Unreleased / ideas
 - Tighten `tutorials/bootstrap-new-project.md` and `tutorials/troubleshooting.md` to the same scannable bar as `human-quickstart.md`.
 
