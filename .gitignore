@@ -1,0 +1,37 @@
+# Bottega is a docs+templates framework — it has no build of its own.
+# This .gitignore protects projects that VENDOR Bottega next to their code,
+# and keeps incidental local cruft out of the framework repo.
+
+# --- Secrets (never commit) ---
+.env
+.env.*
+!.env.example
+*.local
+secrets/
+*.pem
+*.key
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# --- Node ---
+node_modules/
+.next/
+dist/
+build/
+npm-debug.log*
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# --- Claude Code local worktrees / per-session scratch ---
+.claude/worktrees/
