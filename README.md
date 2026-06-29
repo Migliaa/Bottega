@@ -93,38 +93,45 @@ Repeat. The files are always the source of truth, so any session can be reconstr
 
 > Prerequisite: [Claude Code](https://claude.com/claude-code) and a git repository for **your** project (not this one).
 
-### Get started in 60 seconds
+### Two folders (read this first — it's the part people trip on)
 
-```bash
-# 1. Clone the framework once (anywhere on your machine).
+You deal with **two** folders, and they're not the same:
+
+1. **The Bottega framework** — *this* repo. You clone it once; it's the box of templates. You never run the manager inside it.
+2. **Your project** — where you actually work. Bottega gets *installed into it* by the manager, guided by you. You point the manager at the framework clone to read the templates.
+
+### Step by step
+
+**1. Clone the framework once** (anywhere — it's just the template box):
+
+```
 git clone https://github.com/Migliaa/Bottega.git
-
-# 2. Create your project folder + repo, then enter it.
-mkdir my-project && cd my-project && git init
-
-# 3. Install the bootstrap command. (The one manual step: a slash command
-#    must exist before you can call it.)
-mkdir -p .claude/commands
-cp ../Bottega/templates/commands/bootstrap.md .claude/commands/
 ```
 
-Now open a Claude Code session **rooted in `my-project`** and type:
+**2. Create your project folder and make it a git repo.** Run these **one line at a time** — don't chain them with `&&` (Windows PowerShell and some shells reject that operator):
 
 ```
-/bootstrap ../Bottega
+mkdir my-project
+cd my-project
+git init
 ```
 
-The manager interviews you, generates your filled-in `CLAUDE.md`, cockpit, sprints, commands, departments, and memory seeds, then you run `/lancia-org` — and the workshop is open. (Prefer to do it by hand? See the two options below.)
+**3. Open a Claude Code session *inside* `my-project`.** This is the *rooting* rule: the session must live in your project folder, or its slash commands and file reads won't resolve.
 
-**Option A — guided (recommended).** Copy the `templates/commands/bootstrap.md` slash command into your project's `.claude/commands/`, open a Claude Code session **rooted in your project folder**, and run `/bootstrap`. The manager interviews you (what's the project? which departments? what's the IP to protect? public or private? which secret files?) and **generates your filled-in instance files**.
+**4. Start the setup by pasting the bootstrap prompt.** Open `Bottega/templates/commands/bootstrap.md`, copy its whole contents, paste it as your first message, and add one line: *"the Bottega clone is at `../Bottega`"* (point it at wherever you cloned it in step 1).
 
-**Option B — manual.**
-1. Copy `templates/` into your project and rename `*.template` files, removing the suffix.
-2. Fill the placeholders (`{{PROJECT_NAME}}`, `{{REPO_URL}}`, `{{SECRETS_GLOB}}`, `{{IP_TO_PROTECT}}`, `{{DEPARTMENTS}}`, …) — they're all listed in `templates/bottega.config.md`.
-3. Put `CLAUDE.md` and the `commands/` in place, seed the manager's `memory/`.
-4. Open a session rooted in your project and run `/lancia-org` to start the manager.
+> Why paste instead of typing a command? A slash command has to be *installed* before you can call it — a chicken-and-egg on a brand-new project. Pasting the prompt skips that. *(Want the reusable `/bootstrap` command for next time? Copy that one file into `my-project/.claude/commands/`, then you can type `/bootstrap ../Bottega` instead of pasting.)*
 
-Then read **[`tutorials/human-quickstart.md`](tutorials/human-quickstart.md)** — the human user manual.
+**5. Answer the interview.** The manager asks what the project is, which departments you need, what must stay secret, public or private, etc. — then **generates your filled-in files** (`CLAUDE.md`, the cockpit, sprints, commands, departments, memory seeds) and shows you the diff before saving.
+
+**6. Open the workshop:** run `/lancia-org` to start the manager. From here, your manual is **[`tutorials/human-quickstart.md`](tutorials/human-quickstart.md)**.
+
+### Prefer to set it up entirely by hand?
+
+1. Copy `templates/` into your project and rename the `*.template` files (drop the suffix).
+2. Fill the placeholders (`{{PROJECT_NAME}}`, `{{REPO_URL}}`, `{{SECRETS_GLOB}}`, `{{IP_TO_PROTECT}}`, `{{DEPARTMENTS}}`, …) — all listed in `templates/bottega.config.md`.
+3. Put `CLAUDE.md` and `commands/` in place; seed the manager's `memory/`.
+4. Open a session rooted in your project and run `/lancia-org`.
 
 ## Repository structure
 
