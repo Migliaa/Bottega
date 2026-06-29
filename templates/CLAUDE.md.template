@@ -67,6 +67,14 @@ It's normal to finish several sprints per session. Don't re-read the `.md` files
 ### 2.7 Agentic automation governance
 Before building/granting autonomy to any automation, apply the Bottega `docs/06-agentic-governance.md` checklist. Project-specific automation decisions live in `AUTOMATION_PLAYBOOK.md` (root), maintained by the manager.
 
+### 2.8 Lightweight conventions (token-aware)
+Cheap conventions that prevent expensive waste. They add a handful of lines here (read on demand) and files read **on demand** — never new auto-loaded files.
+- **Gate states:** PASS · CONCERNS (ship with a noted caveat) · FAIL · WAIVED (a risk consciously accepted). One line in the relevant `STATUS.md`/`ActualStatus.md` — no per-gate files.
+- **Remediation cap:** after **2 failed fix attempts** on the same issue, stop and escalate to the committente. No infinite loops.
+- **Planning tiers:** trivial → just do it · standard → a work-order · epic → a brief, then **shard** into self-contained stories (each with its own acceptance criteria + tests).
+- **Decision log:** record each real decision as ONE appended line in `DECISIONS.md` (read on demand). Never re-litigate a logged decision — supersede it explicitly.
+- **Handover:** before `/compact` or closing, run `/handover` — it refreshes `ActualStatus.md`'s 📌 STATE as a clean resume point. Keep it short; point to `Sprint.md`/`DECISIONS.md` rather than copying them.
+
 ---
 
 ## 3. Interaction style

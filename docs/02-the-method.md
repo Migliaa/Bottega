@@ -76,4 +76,13 @@ When the committente validates a block:
 
 It's normal to finish several sprints in one session. When one is validated and the next begins, **don't re-read the `.md` files** — the context is already there. Instead, the manager reminds the committente that `/compact` (or a fresh session) is a good idea before a heavy next sprint, to keep the context efficient. `/compact` is typed by the human; the agent only reminds at the right moment.
 
+## Token economy (a first-class concern)
+
+Files cost tokens — input every time an auto-loaded file is read, output every time one is rewritten. Bottega keeps the recurring cost low on purpose:
+- **Auto-load only the essentials** (`ActualStatus.md`, `Sprint.md`). Everything else (`DECISIONS.md`, charters, these docs) is read **on demand**.
+- **Prefer conventions over files**, and **append over rewrite** (a decision is one new line, not a rewritten section).
+- **Reuse anchors:** `/handover` updates the existing 📌 STATE block instead of spawning a new file.
+
+The test for any new process: does it save more tokens downstream (fewer re-explanations, re-litigated decisions, fix-loops, ambiguous hand-offs) than it costs to maintain? If not, it doesn't earn a file.
+
 Next: **[03 · Roles](03-roles.md)** — who is allowed to do what.

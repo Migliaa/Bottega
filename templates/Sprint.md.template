@@ -22,5 +22,7 @@
   1. `[O]` …
   2. `[S]` …
 - **Invariants / constraints:** …
+- **Acceptance criteria:** AC1 … · AC2 … (link each micro to its AC, e.g. `(AC:1)`).
 - **Definition of done:** `{{STATIC_CHECKS}}` green; <specific tests>.
 - **Rules:** work on `main`; **don't commit** (the manager does); never touch `{{SECRETS_GLOB}}`.
+- **Execution Record** (the operative fills this in its closing summary — not a new file): files changed · what & why · tests run + result · open notes/escalations.

@@ -1,0 +1,7 @@
+# {{PROJECT_NAME}} — Decision log
+
+> Append-only. One terse line per **real** decision, so it's never re-litigated.
+> Read **on demand** — NOT auto-loaded (keeps recurring token cost at zero).
+> Format: `date — decision. Why: … · Rejected: … · [active|superseded]`
+
+- {{DATE}} — <decision>. Why: <one line>. Rejected: <one line>. [active]

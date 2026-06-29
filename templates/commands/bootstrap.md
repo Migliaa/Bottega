@@ -20,8 +20,8 @@ Be honest and recommend; don't dump options. Pre-vet odd choices (e.g. "public r
 
 ## Step 3 — generate the instance files
 From the answers, write into the project root:
-- `bottega.config.md` (filled), `CLAUDE.md`, `COMMITTENTE.md`, `ActualStatus.md`, `Sprint.md`, `Sprint_Done.md` — substituting every `{{placeholder}}`.
-- `.claude/commands/`: `lancia-org.md`, `lancia-operativa.md`, `lancia-ricerca.md`, `bootstrap.md`, and one `lancia-<dept>.md` per chosen department.
+- `bottega.config.md` (filled), `CLAUDE.md`, `COMMITTENTE.md`, `ActualStatus.md`, `Sprint.md`, `Sprint_Done.md`, `DECISIONS.md` — substituting every `{{placeholder}}`.
+- `.claude/commands/`: `lancia-org.md`, `lancia-operativa.md`, `lancia-ricerca.md`, `handover.md`, `bootstrap.md`, and one `lancia-<dept>.md` per chosen department.
 - For each chosen persistent department: `<dept>/CHARTER.md` (from its `departments/` recipe), `<dept>/STATUS.md`, `<dept>/INTERFACE.md`.
 - Seed the manager's memory: `MEMORY.md`, `user-profile.md`, `working-style.md` (in the project's memory dir).
 
