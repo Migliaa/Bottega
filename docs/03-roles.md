@@ -4,7 +4,7 @@ Each role has a **mandate** (what it owns) and **boundaries** (what it must esca
 
 ## Committente (you)
 
-**Mandate:** strategy, scope, priorities, money, and final approval. You launch sessions and act as the message bus between them. You approve pushes.
+**Mandate:** strategy, scope, priorities, money, and final approval. You **launch** the sessions and approve pushes — but you **don't carry content** between them; the git files do.
 
 **You do not:** write code or department deliverables yourself (you *can*, but the point is to delegate). You don't micromanage *how* a department reaches a result inside its lane.
 
@@ -51,7 +51,7 @@ Departments are **configured per project** — pick the ones you need from [`dep
 
 ## The escalation protocol (department → manager)
 
-When a department hits something outside its lane, it prepares a **self-sufficient message**: the reference task, the context, the options it considered, and exactly where it sees the problem. It hands that to the committente, who relays it to the manager. It keeps working on *independent* things only; otherwise it waits.
+When a department hits something outside its lane, it prepares a **self-sufficient escalation**: the reference task, the context, the options it considered, and exactly where it sees the problem. It **writes** that to its channel — `INTERFACE.md` (`## From <Dept>`) for a persistent department, or the Execution Record / `Sprint.md` for an operative — and flags the committente, who **triggers** the manager to read it. (The committente points; it doesn't carry the content.) The department keeps working on *independent* things only; otherwise it waits.
 
 When the manager receives an escalation it: (1) checks the question is in scope; (2) reads the sections the department is allowed to edit to see exactly where it stopped; (3) decides in autonomy if the answer is obvious/strongly-indicated, otherwise discusses it with the committente; (4) applies the fix — either an immediate answer for the current sub, or a **re-plan** of later steps if the issue reaches further.
 

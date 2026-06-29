@@ -4,7 +4,7 @@ The `INTERFACE.md` files are how the manager and a **persistent** department com
 
 ## Why it exists
 
-The committente is the message bus, but a bus you have to *remember to ride* is fragile. The interface protocol removes the human reminder: each side reads its mailbox at a fixed moment (session start, and — for the manager — before every gate) and writes to it at a fixed moment (session close). Nobody says "remember to sync"; the protocol *is* the syncing.
+The committente only **triggers** the sessions; the files are the bus. But a channel someone has to *remember to check* is fragile. The interface protocol removes the human reminder: each side reads its mailbox at a fixed moment (session start, and — for the manager — before every gate) and writes to it at a fixed moment (session close). Nobody says "remember to sync"; the protocol *is* the syncing.
 
 ## One file per department, not a hub
 

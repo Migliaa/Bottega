@@ -5,7 +5,7 @@ The shared vocabulary of a Bottega. Using these terms consistently is part of wh
 | Term | Meaning |
 |---|---|
 | **Bottega** | This operating model. Italian for the Renaissance workshop where a master directed apprentices on commission. |
-| **Committente** | The human patron who commissions and steers the work. In Bottega: **you** — you decide strategy and act as the message bus between sessions. |
+| **Committente** | The human patron who commissions and steers the work. In Bottega: **you** — you decide strategy and **trigger** the sessions. You don't carry content between them; the git files do. |
 | **Manager** (capobottega) | The single Opus session that plans, decides architecture/product, triages, writes sprints, and is the only actor that commits to `main`. |
 | **Department** | A specialized session with a narrow mandate and its own folder. Persistent (validation, publishing, compliance…) or disposable (execution). |
 | **Execution session** (operative) | A disposable session that runs one self-contained work-order, then is discarded. No `INTERFACE.md`. |
@@ -22,6 +22,6 @@ The shared vocabulary of a Bottega. Using these terms consistently is part of wh
 | **COMMITTENTE.md** | The human cockpit: how to work, where files are, what to do now. |
 | **IP-to-protect** | The project's moat — the one proprietary thing that never leaves the private repo. "Sell the shovels, not the gold." |
 | **Rooting** | Opening a session in the correct project root folder so git, slash commands, and disk reads resolve. |
-| **Bus** | The transport for inter-session messages — the committente (carrying messages) plus git (holding content). |
+| **Bus** | The channel that carries content between sessions: the **git files** (`INTERFACE.md`, `Sprint.md`, `ActualStatus.md`). The committente doesn't carry content — they *trigger* the sessions that read/write it. |
 
 > Two signature terms are intentionally Italian — **Bottega** and **committente** — because they name the model precisely (a workshop on commission) and give it an identity. Everything else is plain.

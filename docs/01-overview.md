@@ -4,7 +4,7 @@ Bottega runs a project as a **small company of AI agents**. This page is the men
 
 ## The three kinds of actor
 
-1. **The committente (you).** The human patron. You decide strategy, scope, and money. Crucially, you are also the **message bus**: sessions don't talk to each other, so you carry outputs from one to the next. You launch sessions and approve pushes.
+1. **The committente (you).** The human patron. You decide strategy, scope, and money. Crucially, you **don't carry the content** between sessions — the **git files** do. Your job is to **decide** and to **trigger** the sessions (launch each one so it reads and writes the files), and to approve pushes.
 
 2. **The manager (one Opus session).** The *capobottega*. It plans (decomposes work Macro → Sub → Micro), makes architecture/product calls, triages department outputs, writes the sprints, and is the **only actor that commits to `main`**. It owns the planning and decision files.
 
@@ -21,14 +21,14 @@ Because one context window doing planning **and** implementation **and** QA **an
 - work is **parallelizable** across your day (launch one, come back later);
 - a session can **die without losing anything** — its state is on disk.
 
-## Why the committente is the bus
+## Why git is the bus (and you just trigger)
 
-It's a deliberate simplicity. Agents coordinating *directly* needs shared runtime, message queues, and conflict handling. Bottega instead routes everything through **two durable channels**:
+It's a deliberate simplicity. Agents coordinating *directly* needs shared runtime, message queues, and conflict handling. Bottega instead splits the job in two:
 
-- **You**, carrying short messages and launching sessions (the *transport*);
-- **git files**, holding the actual content (the *payload*).
+- **git files** hold the **content** — `INTERFACE.md` (manager ↔ persistent department), `Sprint.md` (work-orders + the operative's Execution Record), `ActualStatus.md`. These are the **bus**.
+- **you** provide the **trigger** — you launch each session so it reads/writes those files, and you decide. You do **not** copy outputs from one session into another; the files already carry them.
 
-This means there is **no infrastructure to run**. The "network" is you plus the repo. It scales down to a solo builder and up to a small team, and it leaves a complete audit trail in git history.
+So there is **no infrastructure to run**, and you're not a courier — you're the one who gives the go. The "network" is the repo. It scales down to a solo builder and up to a small team, and leaves a complete audit trail in git history.
 
 ## The files that hold the company together
 

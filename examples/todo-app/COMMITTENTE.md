@@ -3,7 +3,7 @@
 > Filled from `templates/COMMITTENTE.md.template`. (Example instance.)
 
 ## 1. The model
-You are the bus. One **manager** + two lanes (**execution**, **validation**).
+You decide & trigger; the git files are the bus. One **manager** + two lanes (**execution**, **validation**).
 
 | Session | What it does | Launch | Open in |
 |---|---|---|---|

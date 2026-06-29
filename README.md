@@ -39,7 +39,7 @@ It is named after the Renaissance **bottega**: a workshop where a *capobottega* 
 
 | Renaissance bottega | Bottega framework |
 |---|---|
-| Committente (patron) | **You** — the human who decides strategy and carries messages |
+| Committente (patron) | **You** — decide strategy, launch the sessions, approve |
 | Capobottega (master) | The **manager** agent: plans, decides, commits |
 | Garzoni / apprentices | The **department** agents: execute in their lane |
 | The workshop's method | The **process constitution** + interface protocol |
@@ -57,27 +57,22 @@ A single long agent chat has three failure modes Bottega is designed to remove:
 ## The model in one picture
 
 ```
-                 ┌──────────────────────────────────┐
-                 │      COMMITTENTE  (you, human)     │  decides strategy & price;
-                 │      the patron · the message bus  │  carries messages between sessions
-                 └─────────────────┬──────────────────┘
-                                   │
-                 ┌─────────────────▼──────────────────┐
-                 │      MANAGER  (Opus session)        │  plans Macro→Sub→Micro, triages,
-                 │      "il capobottega"               │  writes sprints, commits & pushes
-                 └─────────────────┬──────────────────┘
-        ┌───────────────┬──────────┴───────┬───────────────┐
-        ▼               ▼                  ▼               ▼
-  ┌───────────┐  ┌────────────┐    ┌────────────┐   ┌────────────┐
-  │ EXECUTION │  │ VALIDATION │    │  RESEARCH  │   │ PUBLISHING │   … pick the
-  │(operative)│  │   (QA)     │    │            │   │ COMPLIANCE │     departments
-  └───────────┘  └─────┬──────┘    └────────────┘   └────────────┘     you need
-                       │
-        INTERFACE.md ──┘   async mailbox: manager ↔ each persistent department
-                           (Digest · From Manager · From Department)
+   COMMITTENTE  (you, human) — the patron
+   decides strategy & price · launches sessions · approves
+         │   ↕ a real two-way conversation
+   MANAGER  (Opus) — "il capobottega"
+   plans Macro→Sub→Micro · triages · writes sprints · the ONLY one who commits
+         │
+         │   everything below is file-mediated — git is the bus, you just trigger the sessions
+         │
+   ├─▶ EXECUTION (operative, disposable) ── via Sprint.md work-order + Execution Record (no mailbox)
+   ├─▶ VALIDATION ┐
+   ├─▶ RESEARCH   │  persistent departments — each with its OWN INTERFACE.md
+   ├─▶ PUBLISHING │  (Digest · From Manager · From Department)
+   └─▶ COMPLIANCE ┘  … pick the departments you need
 ```
 
-Sessions **do not talk to each other directly.** The committente launches them and carries outputs back; the *content* of their conversation lives in git files (`INTERFACE.md`, `Sprint.md`, `ActualStatus.md`). This is what makes the organization survive a closed laptop, a crashed session, or a new teammate.
+Sessions **don't talk to each other directly**, and **you don't carry their messages**. The *content* flows through **git files** (`INTERFACE.md`, `Sprint.md`, `ActualStatus.md`) — those files are the **bus**. You just **trigger** the sessions (launch them so they read and write those files) and make the decisions. That's what lets the organization survive a closed laptop, a crashed session, or a new teammate.
 
 ## How it works (the cycle)
 
@@ -138,7 +133,7 @@ git init
 | Path | What it is |
 |---|---|
 | [`docs/`](docs/) | **The method, explained.** Read these to understand the model. |
-| [`docs/01-overview.md`](docs/01-overview.md) | The model: manager + departments + committente-as-bus |
+| [`docs/01-overview.md`](docs/01-overview.md) | The model: manager + departments + git-files-as-the-bus |
 | [`docs/02-the-method.md`](docs/02-the-method.md) | The work cycle, the 3-level sprints, gates |
 | [`docs/03-roles.md`](docs/03-roles.md) | Each role's mandate and boundaries |
 | [`docs/04-interface-protocol.md`](docs/04-interface-protocol.md) | The `INTERFACE.md` async mailbox spec |
@@ -173,7 +168,7 @@ No. Sessions run **one at a time**; you (the committente) carry messages between
 A good prompt dies with the chat. Bottega externalizes the prompt into **roles, a process constitution, an interface protocol, and launch commands** that persist in git and carry to the next project.
 
 **What's a "committente"?**
-The Italian word for the patron who commissions work from a workshop. In Bottega it's **you**: you decide strategy and act as the message bus between sessions. See the [glossary](docs/07-glossary.md).
+The Italian word for the patron who commissions work from a workshop. In Bottega it's **you**: you decide strategy and **trigger** the sessions; the **git files** are the bus, not you. See the [glossary](docs/07-glossary.md).
 
 **Can I add my own departments?**
 Yes. Use [`templates/department-charter.md.template`](templates/department-charter.md.template) and the recipes in [`departments/`](departments/). Departments are configured per project.
