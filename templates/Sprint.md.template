@@ -1,0 +1,26 @@
+# {{PROJECT_NAME}} — Sprints
+
+> Planned work only (done work moves to `Sprint_Done.md`). Macro → Sub → Micro.
+> `[O]` = stronger model recommended · `[S]` = mechanical/scoped · `[ ]`/`[x]` = open/done.
+
+## S1 — <macro objective>
+
+### S1.A — <sub-sprint: a testable block>
+- [ ] S1.A.1 `[O]` <micro: clear, self-contained deliverable>
+- [ ] S1.A.2 `[S]` <micro>
+- **Definition of done:** <which static checks / tests must be green>
+
+### S1.B — <sub-sprint> (micros: defined just-in-time, not yet)
+
+---
+
+## ▶️ WORK ORDER — <name> (for an execution session)
+> A self-contained block an execution session can pick up cold via `/lancia-operativa <name>`.
+
+- **Files in scope:** …  · **Out of scope:** …
+- **Micros (in order):**
+  1. `[O]` …
+  2. `[S]` …
+- **Invariants / constraints:** …
+- **Definition of done:** `{{STATIC_CHECKS}}` green; <specific tests>.
+- **Rules:** work on `main`; **don't commit** (the manager does); never touch `{{SECRETS_GLOB}}`.

@@ -1,0 +1,58 @@
+# 🧭 {{PROJECT_NAME}} — Committente cockpit
+
+> Your single starting point: **how to launch and use the sessions**, **where every file is**, and **what to do now**. (Copy to your project root as `COMMITTENTE.md`.)
+
+## 1. The model: 1 manager + departments (separate sessions)
+You are the **bus**: sessions don't talk to each other — you carry the messages.
+
+| Session | What it does | How you launch it | Entry file |
+|---|---|---|---|
+| **Manager** | decides, plans, triages, writes sprints, commits/pushes | `/lancia-org` ({{MANAGER_MODEL}}) | — (you talk to it) |
+| **Execution** | writes code, runs the micros | `/lancia-operativa <work-order>` | `ActualStatus.md` + `Sprint.md` (re-read from disk) |
+| **<Dept>** | <its mandate> | `/lancia-<dept>` | `<dept>/CHARTER.md` + `<dept>/INTERFACE.md` |
+
+**Golden rule:** anything **decision / strategy / price** comes back to the **manager**. Departments outside their lane **don't decide** — they escalate (through you).
+
+### ⚡ Slash commands (no more pasting prompts)
+Open a new session and type the command as the **first message**; it expands into the right prompt (which reads its charter + interface + current task from disk). Tasks live in files, so the commands **don't expire**.
+
+| Command | Session | Open in | Notes |
+|---|---|---|---|
+| `/lancia-org` | Manager | {{MANAGER_MODEL}} | self-orients (reads state + interfaces) |
+| `/lancia-operativa <work-order>` | Execution | model per work-order | e.g. `/lancia-operativa Refactor X` |
+| `/lancia-<dept>` | Department | per recipe | runs its open `From Manager` items |
+| `/lancia-ricerca <brief>` | Research | strong model | one-off deep research |
+| `/bootstrap` | Manager | {{MANAGER_MODEL}} | (re)generate instance files by interview |
+
+> ⚠️ **Rooting rule:** open **every** session from `{{PROJECT_ROOT}}` — never another repo/worktree. Otherwise git points at the wrong repo, slash commands are "Unknown command", and "read from disk" fails.
+
+## 2. How we work together (the cycle)
+1. **Come to the manager** when you need a decision, have a department output to triage, want to plan a step, or finished a block.
+2. **It prepares** the work (work-order/runbook/prompt) and updates the sprints.
+3. **You launch** the right session with the pointer it gives you.
+4. That session works and **hands you an output** → you relay it → it triages, updates files, decides next.
+5. **Commits/pushes are the manager's**, with your OK to push.
+
+## 3. Where to find things (file map)
+**State & planning (open often):**
+- `ActualStatus.md` — where we are, one page (auto-loaded).
+- `Sprint.md` — all sprints, micros, work-orders.
+- `Sprint_Done.md` — closed history.
+
+**Departments (entry file + ledger + channel):**
+- `<dept>/CHARTER.md` (its rules), `<dept>/STATUS.md` (ledger), `<dept>/INTERFACE.md` (channel).
+
+**Reference (consult when needed):**
+- `CLAUDE.md` (process rules) · `bottega.config.md` (your config) · `AUTOMATION_PLAYBOOK.md` (what we automate, when, behind which gates) · any project docs.
+
+## 4. What to do NOW (priority — updated {{DATE}})
+> You choose the order; this is the manager's recommendation. Full state: `ActualStatus.md`.
+
+1. …
+2. …
+3. …
+
+## 5. Handy reminders
+- When a session "dies", **the files remain** (on its worktree/branch) — tell the manager and it recovers them.
+- The **IP-to-protect** ({{IP_TO_PROTECT}}) stays in the private repo, never published.
+- The **release/charge go-live** is gated; implementation and internal work are **not** gated → those always proceed.

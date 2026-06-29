@@ -1,0 +1,8 @@
+# {{PROJECT_NAME}} — Done (archive)
+
+> Closed macro-sprints, newest first. Moved here by the manager when a macro is fully
+> validated. Keeps `Sprint.md` lean while preserving the historical detail.
+
+## S0 — <example closed macro> — ✅ DONE ({{DATE}}, commit `<hash>`)
+- S0.A … — outcome, tests, notes
+- S0.B … — outcome

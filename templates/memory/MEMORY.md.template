@@ -1,0 +1,10 @@
+# Memory Index
+
+> The manager's persistent memory index, loaded each session. One line per memory file.
+> Keep memory files small (one fact each). Add a pointer here when you create one.
+> (In Claude Code, memory is keyed to the **main repo path** — so it persists across
+> this repo's worktrees. Open sessions rooted in `{{PROJECT_ROOT}}` to find it.)
+
+- [Committente profile](user-profile.md) — who the committente is (role, preferences, constraints)
+- [Working style](working-style.md) — how the committente wants the manager to collaborate
+- [Project context]({{PROJECT_SLUG}}-context.md) — goals/constraints not derivable from the code or git history

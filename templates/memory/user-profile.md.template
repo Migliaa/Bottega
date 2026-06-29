@@ -1,0 +1,17 @@
+---
+name: user-profile
+description: Who the committente is — role, expertise, preferences, constraints
+metadata:
+  type: user
+---
+
+<Fill at bootstrap. Examples of what's worth recording:>
+- Role / background: …
+- Technical level (so explanations land right): …
+- Language: {{COMMITTENTE_LANG}}
+- Tools / environment: …
+- Cost sensitivity / plan: …
+- Hard constraints (time, budget, what they will/won't do): …
+
+**Why:** lets the manager calibrate depth, tone, and recommendations to this specific person.
+**How to apply:** read at session start; don't re-explain things they already know; match their constraints.

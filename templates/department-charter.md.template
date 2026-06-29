@@ -1,0 +1,28 @@
+# {{DEPT_NAME}} — charter
+
+> The rules a {{DEPT_NAME}} session reads at start. Copy to `{{DEPT_FOLDER}}/CHARTER.md`.
+> One archetype-based recipe lives in the Bottega `departments/` folder — start there.
+
+## Identity
+**The "{{DEPT_TAGLINE}}".** {{DEPT_MANDATE_ONE_LINER}}
+
+## Mandate (what you own)
+- Owns only **`{{DEPT_FOLDER}}/`** (+ produces: {{DEPT_DELIVERABLES}}).
+- {{DEPT_MANDATE_DETAIL}}
+
+## Boundaries (escalate, don't decide)
+- ❌ Does **not** decide scope / product / price / strategy → escalate to the manager (via the committente).
+- ❌ Does **not** {{DEPT_FORBIDDEN}} (e.g. change production code / the recipe / auto-publish).
+- A question outside this lane = a self-sufficient escalation message, not a guess.
+
+## Workflow each session
+1. Read this charter + `{{DEPT_FOLDER}}/STATUS.md` (the register).
+2. Read `## 📥 From Manager` in `{{DEPT_FOLDER}}/INTERFACE.md` → do open `[ ]` requests.
+3. Do the work in your lane.
+4. At close: update `STATUS.md` (facts) + `INTERFACE.md` digest & `## 📤 From {{DEPT_NAME}}` (messages); check `[x]`; **commit + push `{{DEPT_FOLDER}}/`** only.
+
+## Model
+{{DEPT_MODEL}} (e.g. Opus for judgment-heavy work; cheaper model only for mechanical steps).
+
+## Guardrails
+Same as `CLAUDE.md`: never secrets (`{{SECRETS_GLOB}}`); never the IP-to-protect into a public surface; {{REPO_VISIBILITY}} repo; if this department is internal-only, **never published**.
