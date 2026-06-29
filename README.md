@@ -6,6 +6,8 @@
 [![Built for: Claude Code](https://img.shields.io/badge/built%20for-Claude%20Code-7C3AED.svg)](https://claude.com/claude-code)
 [![Status: living framework](https://img.shields.io/badge/status-living%20framework-green.svg)](#)
 
+![Bottega — an operating model for AI-agent projects](assets/social-preview.png)
+
 **Bottega** is a reusable way to organize work with [Claude Code](https://claude.com/claude-code) (and similar agentic coding tools): instead of one chat that forgets your conventions every time, you run a **manager agent** that plans and commits, a set of **department agents** that execute in their own lane, and a lightweight **file protocol** that keeps them in sync — all driven by you, the **committente** (the patron who commissions the work).
 
 You set it up once. The method, the roles, the guardrails, and the launch commands are all written down — so your **next** project starts from a trained organization, not from a blank prompt.
@@ -90,6 +92,29 @@ Repeat. The files are always the source of truth, so any session can be reconstr
 ## Quickstart
 
 > Prerequisite: [Claude Code](https://claude.com/claude-code) and a git repository for **your** project (not this one).
+
+### Get started in 60 seconds
+
+```bash
+# 1. Clone the framework once (anywhere on your machine).
+git clone https://github.com/Migliaa/Bottega.git
+
+# 2. Create your project folder + repo, then enter it.
+mkdir my-project && cd my-project && git init
+
+# 3. Install the bootstrap command. (The one manual step: a slash command
+#    must exist before you can call it.)
+mkdir -p .claude/commands
+cp ../Bottega/templates/commands/bootstrap.md .claude/commands/
+```
+
+Now open a Claude Code session **rooted in `my-project`** and type:
+
+```
+/bootstrap ../Bottega
+```
+
+The manager interviews you, generates your filled-in `CLAUDE.md`, cockpit, sprints, commands, departments, and memory seeds, then you run `/lancia-org` — and the workshop is open. (Prefer to do it by hand? See the two options below.)
 
 **Option A — guided (recommended).** Copy the `templates/commands/bootstrap.md` slash command into your project's `.claude/commands/`, open a Claude Code session **rooted in your project folder**, and run `/bootstrap`. The manager interviews you (what's the project? which departments? what's the IP to protect? public or private? which secret files?) and **generates your filled-in instance files**.
 
