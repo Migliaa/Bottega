@@ -39,6 +39,11 @@ Open a new session and type the command as the **first message**; it expands int
 - `Sprint.md` — all sprints, micros, work-orders.
 - `Sprint_Done.md` — closed history.
 
+**Knowledge folders:**
+- `research/` — research briefs + outputs (index: `research/README.md`).
+- `reference/` — durable reference docs (architecture, business, specs).
+- `incidents/` — post-mortems.
+
 **Departments (entry file + ledger + channel):**
 - `<dept>/CHARTER.md` (its rules), `<dept>/STATUS.md` (ledger), `<dept>/INTERFACE.md` (channel).
 

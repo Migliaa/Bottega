@@ -1,0 +1,9 @@
+# Research index — {{PROJECT_NAME}}
+
+> Every research output lives in this folder, one file per topic. This is the index —
+> the research lane appends a line when it finishes; the manager reads it to find things.
+> Briefs (inputs) live in `research/briefs/`.
+
+| Date | Topic | File | One-line takeaway |
+|---|---|---|---|
+| {{DATE}} | <topic> | [`<topic>.md`](<topic>.md) | <the conclusion in one line> |

@@ -53,7 +53,11 @@ your-project/
 ├── ActualStatus.md           ← live state (auto-loaded)
 ├── Sprint.md                 ← planned work + work-orders
 ├── Sprint_Done.md            ← archive
-├── .claude/commands/         ← /lancia-org, /lancia-operativa, /bootstrap, …
+├── DECISIONS.md              ← append-only decision log
+├── .claude/commands/         ← /lancia-org, /lancia-operativa, /handover, /bootstrap, …
+├── research/                 ← research briefs + outputs (README.md = index)
+├── reference/                ← durable reference docs (architecture, business, specs)
+├── incidents/                ← post-mortems
 ├── <your code>/              ← web/, engine/, src/, …
 ├── validation/               ← a persistent department (STATUS.md + INTERFACE.md)
 │   ├── STATUS.md

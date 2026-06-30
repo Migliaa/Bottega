@@ -25,6 +25,13 @@
 
 **⚠️ The disk wins.** Execution and department sessions **re-read `ActualStatus.md` + the current `Sprint.md` section from disk at the start of every hand-off, before acting** — the manager may have rewritten them after this session loaded. On any discrepancy between memory and disk, **disk wins.**
 
+**Where everything lives (keep root lean):**
+- **root** — only the hot/cockpit files above + `DECISIONS.md`. Nothing else accumulates here.
+- **`research/`** — research briefs + outputs, one file per topic, indexed by `research/README.md`. The research lane **writes here**; the manager **looks here**.
+- **`reference/`** — durable reference docs (architecture, business, specs) — read on demand.
+- **`incidents/`** — post-mortems / incident reports.
+- **`<department>/`** — department-owned (`validation/`, `content/publishing/`, `compliance/`, …).
+
 ---
 
 ## 2. How we work
