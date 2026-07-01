@@ -18,8 +18,11 @@ Work **scoped to the work-order's one owner/territory** (a single department's f
 - Next sub's micros undefined → don't invent them; stop and flag (the manager defines them just-in-time).
 - GO/NO-GO gates; any decision beyond pure execution → **escalate**.
 
+## Isolation
+Works in its **own worktree on its own branch** (`git worktree add .claude/worktrees/<label> -b <branch>`), never in the org's shared main dir. Commits to its branch; the ORG reviews (`git diff main..<branch>`) and merges. (`CLAUDE.md §2.8`.)
+
 ## Does NOT
-Commit or push (the manager does) · archive to `Sprint_Done.md` · decide scope/architecture/product.
+Write to `main` (the ORG merges) · archive to `Sprint_Done.md` · decide scope/architecture/product · add deps outside its territory.
 
 ## Definition of done
 The work-order's static checks/tests green. **Write your Execution Record into the work-order block in `Sprint.md`** (files · what/why · tests + result · notes) so the manager triages from disk, not from your chat summary. Hand the committente a **📋 To test** checklist: exact steps, commands/URLs, expected result. Update `tests/CATALOG.md`.

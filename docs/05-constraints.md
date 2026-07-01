@@ -34,6 +34,8 @@ A session is anchored to a directory. If you open it in the wrong place, three t
 
 > **Rule:** open **every** session for a project from that project's root folder (`{{PROJECT_ROOT}}`) — never from another repo or an unrelated worktree.
 
+Rooting and **isolation** compose (they don't contradict): you *launch* from the repo so slash commands and file reads resolve, then a **non-org session isolates into its own git worktree before writing** (`CLAUDE.md §2.8`) so it never shares the org's working dir. The org stays in the main dir on `main`; everyone else gets a worktree + branch.
+
 This is the single most common setup mistake; making it a written rule prevents an afternoon of confusion. (Agent memory is keyed to the **main repo path**, so it survives across that repo's worktrees — another reason to keep rooting consistent.)
 
 ## 5. Confirm before irreversible or outward-facing actions

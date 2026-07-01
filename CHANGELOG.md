@@ -8,6 +8,11 @@ Framework **complete and stable**, maintained **incident-driven** (entries below
 ## Unreleased / ideas
 - Tighten `tutorials/bootstrap-new-project.md` and `tutorials/troubleshooting.md` to the same scannable bar as `human-quickstart.md`.
 
+## 2026-06-30 — Session isolation
+- **Non-org sessions get their own worktree**, never `git checkout -b` / commit in the org's shared main dir. Resolves the rooting-vs-isolation contradiction (launch from the repo, then isolate before writing); the org owns `main`, everyone else works on a worktree+branch the org merges. *(Incident: `/lancia-ricerca` did `checkout -b` in the main dir → collided with the org, detached HEAD, org commits on the research branch.)*
+- **Test/build deps stay in the work-order's territory** (declare in the in-scope folder's package; never `add` into a neighbouring project). *(Incident: an operative scoped to publishing ran `uv add` in `engine/`.)*
+- `/lancia-ricerca`: briefs read from `research/briefs/` (accepts name or path).
+
 ## 2026-06-29 — Launch protocol hardening
 - **Deliver the command, not a description:** the green-light hands the committente the *literal, args-filled* launch line, never a prose pointer. *(Incident: a bare `/lancia-operativa` with 3 open work-orders → the session correctly asked which one.)*
 - **Session-type routing + launch invariant + pre-flight:** build/code → an execution session scoped to the owner's folder (never a department session); no launch until a self-contained work-order sits in the session's read-path; a 5-point manager pre-flight. *(Incident: a department session launched to build code, work-order in a file it never reads → stopped and asked.)*
