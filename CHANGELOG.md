@@ -8,6 +8,9 @@ Framework **complete and stable**, maintained **incident-driven** (entries below
 ## Unreleased / ideas
 - Tighten `tutorials/bootstrap-new-project.md` and `tutorials/troubleshooting.md` to the same scannable bar as `human-quickstart.md`.
 
+## 2026-07-01 — Strategist layer ("manager of the manager")
+- New optional **strategist** lane for a top/scarce model (e.g. Fable): reads a pre-digested `strategy/BRIEF.md` (built by a **cheap fan-out** of readers) instead of the whole repo, and writes a compact `strategy/BOARD_REVIEW.md` (position, value/features, plan changes, sprint directives + delegation). Principle: front-load comprehension onto cheap models, spend the expensive one only on judgment. Adds `templates/commands/lancia-strategist.md`, `departments/strategist.md`, `strategy/` in the taxonomy.
+
 ## 2026-06-30 — Session isolation
 - **Non-org sessions get their own worktree**, never `git checkout -b` / commit in the org's shared main dir. Resolves the rooting-vs-isolation contradiction (launch from the repo, then isolate before writing); the org owns `main`, everyone else works on a worktree+branch the org merges. *(Incident: `/lancia-ricerca` did `checkout -b` in the main dir → collided with the org, detached HEAD, org commits on the research branch.)*
 - **Test/build deps stay in the work-order's territory** (declare in the in-scope folder's package; never `add` into a neighbouring project). *(Incident: an operative scoped to publishing ran `uv add` in `engine/`.)*

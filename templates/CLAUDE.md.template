@@ -28,6 +28,7 @@
 **Where everything lives (keep root lean):**
 - **root** — only the hot/cockpit files above + `DECISIONS.md`. Nothing else accumulates here.
 - **`research/`** — research briefs + outputs, one file per topic, indexed by `research/README.md`. The research lane **writes here**; the manager **looks here**.
+- **`strategy/`** — the (optional) strategist layer's interface: `BRIEF.md` (pre-digest it reads), `READING_LIST.md`, `BOARD_REVIEW.md` (its output). See `departments/strategist.md`.
 - **`reference/`** — durable reference docs (architecture, business, specs) — read on demand.
 - **`incidents/`** — post-mortems / incident reports.
 - **`<department>/`** — department-owned (`validation/`, `content/publishing/`, `compliance/`, …).

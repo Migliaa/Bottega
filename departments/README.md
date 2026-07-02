@@ -10,6 +10,7 @@ Each recipe below describes an archetype: its mandate, what it owns, its boundar
 
 | Archetype | "The …" | Persistent? | Enable when |
 |---|---|---|---|
+| [strategist](strategist.md) | board / manager-of-the-manager | periodic | you want a top-model strategic review without it reading the whole repo |
 | [execution](execution.md) | implementer | no (disposable) | always — this is the doing lane |
 | [validation](validation.md) | correctness guarantor | yes | output correctness matters and must be defensible |
 | [research](research.md) | scout | one-off | you need deep, cited investigation before deciding |
