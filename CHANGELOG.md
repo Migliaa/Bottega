@@ -4,7 +4,7 @@ Bottega is hardened by **dogfooding**: it runs a real project, and most rules be
 
 ## Current focus (maintainer)
 Framework **complete and stable**, maintained **incident-driven** (entries below). Latest additions: **interface hardening** (single-writer + originator-closes + prune-on-close) and the **reference shelf** (`reference/` = trigger-keyed distillate cards, cap 30, vendored by `/bootstrap`, now seeded with **R1–R7**) — both from a two-round **Fable self-review** (`strategy/BOARD_REVIEW.md`). Before that, the **strategist layer** (`/lancia-strategist` + `strategy/` + two-way `ASK.md` + `/prep-strategist`).
-**In flight:** one cheap **research fan-out** is queued (`research/briefs/reference-shelf-sources.md`) — pins citations for R4/R5 and makes two more cards (restart-over-stretch, fan-out-hygiene) card-ready. Run it on a cheap model, then admit the two cards + update `Verified:` lines. Everything else from the Fable review is integrated.
+**Backlog (deferred until spare credits):** one cheap **research fan-out** (`research/briefs/reference-shelf-sources.md`, indexed in `research/README.md`) — pins citations for R4/R5 and makes two more cards (restart-over-stretch, fan-out-hygiene) card-ready. Committente launches when there's credit surplus; everything else from the Fable review is integrated.
 The meta-manager session should open **rooted in this folder** (`Bottega`) so `/handover` and native git work. Downstream projects are advised separately — their live state is in **their own** `ActualStatus.md` (managed by their manager), not here (privacy). To resume: read this section + the downstream project's ActualStatus.
 
 ## Unreleased / ideas
