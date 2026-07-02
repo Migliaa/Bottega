@@ -40,13 +40,21 @@ Because the facts live in `STATUS.md` and the artifacts, a forgotten `INTERFACE.
 
 Keep them distinct. The interface is the conversation; the status is the ledger. The digest links to the ledger for detail.
 
+## Two rules that keep the channel lean
+
+`INTERFACE.md` is the **hottest read in the system** — the manager reads it at every session start *and* before every gate. Two rules keep that hot path cheap and conflict-free:
+
+1. **Single-writer sections + originator-closes.** Write **only in your own outbound section** (`📤 From <Dept>` for the department, `📥 From Manager` for the manager). To answer a thread, don't edit the other side's section — **reply by referencing its id in your own** (`↳ re #V4 — …`). Only the thread's **originator** flips it to `[x]`, at its next start, after reading the reply. This gives `[x]` one exact meaning — *the originator acknowledges closure* (an ACK) — and makes each section single-writer, so two independent pushes to the same file merge cleanly instead of colliding on the bus itself.
+
+2. **Prune-on-close.** At CLOSE, each actor **deletes from its own sections the threads that were already `[x]` at the previous close.** The hot file stays O(open items) instead of growing forever. Nothing is lost: **git history is the archive** — `git log -p <dept>/INTERFACE.md` replays every thread ever closed, and the facts already live in `STATUS.md`. (Deleting on the *next* close, not the same one, leaves a one-session trail that a thread was closed before it disappears.)
+
 ## The discipline at session boundaries
 
-**Department at START** (after reading its charter + `STATUS.md`): read `## From Manager`, do the open `[ ]` requests as part of the work.
+**Department at START** (after reading its charter + `STATUS.md`): read `## 📥 From Manager`, do the open `[ ]` requests as part of the work; flip to `[x]` any of its **own** threads (in `## 📤 From <Dept>`) that the manager has now answered.
 
-**Department at CLOSE** (before stopping): update `## 📍 Digest`, write what it did + what it needs in `## From <Dept>`, check off `[x]` what it closed, then **commit + push** its folder (including the interface).
+**Department at CLOSE** (before stopping): update `## 📍 Digest`; in `## 📤 From <Dept>` **only** — write what it did + what it needs, and reply to any manager thread by id (`↳ re #M3 — …`); prune its own threads that were already `[x]` at the previous close; then **commit + push** its folder (including the interface).
 
-**Manager at START of every session and BEFORE every gate:** pull and read the digests + open `## From <Dept>` of all persistent departments, triage, answer/order in `## From Manager`, check off `[x]`. *This fixed step replaces "remind me to check."*
+**Manager at START of every session and BEFORE every gate:** pull and read the digests + open `## 📤 From <Dept>` of all persistent departments; triage; in `## 📥 From Manager` **only** — answer/order and reply by id; flip to `[x]` any of its **own** threads a department has now answered; prune its own already-closed threads. *This fixed step replaces "remind me to check."*
 
 **When the committente says a department just worked:** the manager pulls and reads that `INTERFACE.md` immediately, before deciding.
 
@@ -58,13 +66,13 @@ Keep them distinct. The interface is the conversation; the status is the ledger.
   Detail: validation/STATUS.md
 
 ## 📥 From Manager
-- [x] #M3 — Close the cross-month accumulation gap in signal-X; propose the fix as a diff.
-  - ✅ DONE (validation): root cause is anchoring, not look-ahead; recommended a daily reset; 2 tests proposed.
+- [ ] #M3 — Close the cross-month accumulation gap in signal-X; propose the fix as a diff.
 
 ## 📤 From VALIDATION
 - [ ] #V4 — Which is the next priority dossier, A or B? (A is heavier: many new citations.)
+- ↳ re #M3 — root cause is anchoring, not look-ahead; recommend a daily reset; 2 tests proposed. Diff in validation/STATUS.md.
 ```
 
-The manager, at its next start, reads `#V4`, answers it under `## From Manager`, checks the box, and the loop continues — no human had to chase either side.
+Each side wrote **only in its own section**. Next round: the **manager** reads `↳ re #M3`, flips **its own** `#M3` to `[x]` (ACK), and replies to `#V4` with `↳ re #V4 — start with A` under `## 📥 From Manager`; the **department**, at its next start, reads that and flips **its own** `#V4` to `[x]`. No human chased either side, and no one edited the other's section — so concurrent pushes never collide.
 
 Next: **[05 · Constraints](05-constraints.md)**.

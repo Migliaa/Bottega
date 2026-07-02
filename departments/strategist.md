@@ -11,7 +11,7 @@ The strategist runs on your **scarcest / most expensive model** (e.g. Fable). So
 `strategy/`:
 - `BRIEF.md` — input, **rebuilt by the cheap fan-out before each review** (it goes stale as the repo moves).
 - `READING_LIST.md` — curated source-of-truth pointers (market/strategy · architecture · plan).
-- `ASK.md` — **two-way channel with the manager**: the manager writes questions/doubts/imperfect-architectures/complex-plans-to-design (`From Manager`), the strategist answers (`From Strategist`).
+- `ASK.md` — **two-way channel with the manager** (same protocol as `docs/04-interface-protocol.md`: single-writer sections, originator-closes): the manager writes questions/doubts/imperfect-architectures/complex-plans-to-design in `From Manager`; the strategist answers in `From Strategist` by id (`↳ re #M<n>`), never editing the manager's section; the manager flips `[x]` when it reads.
 - `BOARD_REVIEW.md` — output: position, value/features, plan changes, **sprint directives with delegation**.
 
 ## The run flow (who does what)

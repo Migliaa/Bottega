@@ -22,7 +22,8 @@ Be honest and recommend; don't dump options. Pre-vet odd choices (e.g. "public r
 From the answers, write into the project root:
 - `bottega.config.md` (filled), `CLAUDE.md`, `COMMITTENTE.md`, `ActualStatus.md`, `Sprint.md`, `Sprint_Done.md`, `DECISIONS.md` — substituting every `{{placeholder}}`.
 - `.claude/commands/`: `lancia-org.md`, `lancia-operativa.md`, `lancia-ricerca.md`, `handover.md`, `bootstrap.md`, and one `lancia-<dept>.md` per chosen department.
-- Knowledge folders: `research/` (with a `README.md` index) + `research/briefs/`, `reference/`, `incidents/` — so the taxonomy exists from day one and nothing piles up in root.
+- Knowledge folders: `research/` (with a `README.md` index) + `research/briefs/`, `incidents/` — so the taxonomy exists from day one and nothing piles up in root.
+- **Reference shelf — vendor it:** copy the framework's `templates/reference/` (starter `INDEX.md` + `cards/` + `_CARD.md.template`) into the project's `reference/`, so the cards are pinned in-repo (portability + the `DECISIONS.md` audit trail cites the version actually read). It ships pre-seeded; the manager prunes/adds per project. Curation stays upstream — a card that proves itself here is promoted back to the framework by hand, on evidence.
 - For each chosen persistent department: `<dept>/CHARTER.md` (from its `departments/` recipe), `<dept>/STATUS.md`, `<dept>/INTERFACE.md`.
 - Seed the manager's memory: `MEMORY.md`, `user-profile.md`, `working-style.md` (in the project's memory dir).
 

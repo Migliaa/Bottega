@@ -56,7 +56,7 @@ your-project/
 ├── DECISIONS.md              ← append-only decision log
 ├── .claude/commands/         ← /lancia-org, /lancia-operativa, /handover, /bootstrap, …
 ├── research/                 ← research briefs + outputs (README.md = index)
-├── reference/                ← durable reference docs (architecture, business, specs)
+├── reference/                ← reference shelf: distilled method cards, pull-on-trigger (INDEX.md)
 ├── incidents/                ← post-mortems
 ├── <your code>/              ← web/, engine/, src/, …
 ├── validation/               ← a persistent department (STATUS.md + INTERFACE.md)

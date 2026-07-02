@@ -1,0 +1,13 @@
+<!-- Card format — one distilled lesson per file, ≤ 1 page. Copy this to R<n>-<slug>.md and fill.
+     Admission test before you add it: name the class of manager decision that goes differently for having read this.
+     Can't name it → it's noise, don't add it. Cap: keep the shelf ≤ 30 cards (add one past the cap → evict one). -->
+
+# R<n> — <one-line claim as the title>
+
+**Claim.** <The lesson in 1–2 sentences. A distillate, not a link. What is true.>
+
+**When to pull.** <The situation that should make a manager reach for this card — mirror the "When you are…" line in INDEX.md.>
+
+**How to apply.** <The concrete move. What to do differently. File-level if possible.>
+
+**Source · date · confidence.** <where it comes from — incident / paper / practice> · <YYYY-MM> · <high | medium | low>
