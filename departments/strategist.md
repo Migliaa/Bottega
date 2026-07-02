@@ -11,7 +11,13 @@ The strategist runs on your **scarcest / most expensive model** (e.g. Fable). So
 `strategy/`:
 - `BRIEF.md` — input, **rebuilt by the cheap fan-out before each review** (it goes stale as the repo moves).
 - `READING_LIST.md` — curated source-of-truth pointers (market/strategy · architecture · plan).
+- `ASK.md` — **two-way channel with the manager**: the manager writes questions/doubts/imperfect-architectures/complex-plans-to-design (`From Manager`), the strategist answers (`From Strategist`).
 - `BOARD_REVIEW.md` — output: position, value/features, plan changes, **sprint directives with delegation**.
+
+## The run flow (who does what)
+1. **Manager** runs `/prep-strategist`: rebuilds `BRIEF.md` (cheap fan-out) + writes its questions into `ASK.md → From Manager` + commits. It does **not** launch the strategist.
+2. **Committente** launches `/lancia-strategist` (top model, separate session): the strategist reads BRIEF + ASK, writes `BOARD_REVIEW.md` + answers `ASK.md → From Strategist`.
+3. **Manager** absorbs the directives + answers into work-orders. Keeps comprehension on cheap models, judgment on the expensive one.
 
 ## Boundaries
 Doesn't write detailed sprints or code (delegates: Opus designs, a cheaper model executes) · doesn't commit · doesn't touch the tree beyond `strategy/`. Runs **periodically** (before a phase / a deploy), **not** daily.
