@@ -10,5 +10,6 @@ You are the **MANAGER**. Prepare a run of the **STRATEGIST** (the board layer). 
 - **Research pointers:** point the `READING_LIST` at the `research/` reports. Their conclusions are already digested in the BRIEF ("research already concluded"), but they help the strategist's big picture and Opus when it details a design.
 
 **2) Update `strategy/ASK.md → From Manager`**: your specific questions, doubts, imperfect architectures to review, complex plans to design. One line each, `[ ]`, id `#M<n>`.
+- For a **contract run** (`/lancia-strategist contract`): name the *module/boundary* to design, *why it's expensive to change*, and its hard constraints; point the `READING_LIST` at the module's **current code + its callers**, so the strategist designs the interface against reality (output → `strategy/CONTRACT.md`, implemented later by a cheap session).
 
 Then **commit `strategy/`** and tell the committente: **"ready → launch `/lancia-strategist`"**. **Do NOT launch the strategist yourself** (the committente does, in a separate top-model session).

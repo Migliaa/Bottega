@@ -13,6 +13,10 @@ The strategist runs on your **scarcest / most expensive model** (e.g. Fable). So
 - `READING_LIST.md` — curated source-of-truth pointers (market/strategy · architecture · plan).
 - `ASK.md` — **two-way channel with the manager** (same protocol as `docs/04-interface-protocol.md`: single-writer sections, originator-closes): the manager writes questions/doubts/imperfect-architectures/complex-plans-to-design in `From Manager`; the strategist answers in `From Strategist` by id (`↳ re #M<n>`), never editing the manager's section; the manager flips `[x]` when it reads.
 - `BOARD_REVIEW.md` — output: position, value/features, plan changes, **sprint directives with delegation**.
+- `CONTRACT.md` — output of a **contract run** (`/lancia-strategist contract`): the interface of an expensive-to-change module (surface, types, invariants, error modes), designed by the top model and implemented later by a cheap session. See `templates/commands/lancia-strategist.md`.
+
+## Focus modes (spend the scarce model where judgment has leverage)
+`full` (default board review) · `code`/`features`/`plan`/`strategy` (narrowed, cheaper) · **`contract`** (design an interface, not the code). The **cost guard**: bulk code/review/research/iteration is *never* a strategist run — those go to cheap models; the strategist gets the pre-digest and returns the decision/design. *(Room to grow: `premortem` — adversarial "why did this fail?" before an irreversible move — when the need arises.)*
 
 ## The run flow (who does what)
 1. **Manager** runs `/prep-strategist`: rebuilds `BRIEF.md` (cheap fan-out) + writes its questions into `ASK.md → From Manager` + commits. It does **not** launch the strategist.
