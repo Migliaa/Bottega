@@ -6,4 +6,6 @@
 
 **How to apply.** Fan out cheap readers (one per subsystem) that emit compact digests; synthesize into a dense brief; hand only the brief to the expensive model. Keep the expensive model's *output* short too — output tokens are the priciest. Measure cost in words written, not files touched.
 
-**Source · date · confidence.** Bottega dogfooding — the strategist layer (BRIEF built by a cheap fan-out) · 2026-07 · high
+**Caveat (mandatory).** The brief is a **map, not the territory**, and it's a lossy compression chosen by the *least* capable model in the chain, *before* the expensive one has formed its question — so the loss is silent. Two cheap guards close it: **(1)** every claim in the digest carries a **source pointer** (path / id / line), so drilling down is one read, not a re-derivation; **(2)** the expensive model has **explicit license to pull raw sources** on any anomaly, thin spot, or load-bearing claim. A brief it can't drill through is a *filter*, not a lens.
+
+**Source · date · confidence.** Bottega dogfooding — the strategist layer (BRIEF built by a cheap fan-out) · 2026-07 · high (with caveat)
